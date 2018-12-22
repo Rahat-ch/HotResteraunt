@@ -17,8 +17,10 @@ app.use(express.json());
 var reservations = [
   {
     routeName: "reserv1",
-    name: "Shane",
-    table: 1,
+    reserve_name: "Shane",
+    reserve_phone: 1,
+    reserve_email: "test@test.com",
+    reserve_uniqueid: 1234
 
   }
 ];
@@ -33,7 +35,12 @@ app.get("/", function(req, res) {
 
 app.get("/reserve", function(req, res) {
   res.sendFile(path.join(__dirname, "reserve.html"));
-});
+  });
+
+app.get("/tables", function(req, res) {
+  res.sendFile(path.join(__dirname, "tables.html"));
+  });
+
 
 // Displays all reservations
 app.get("/api/reservations", function(req, res) {
