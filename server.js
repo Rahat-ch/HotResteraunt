@@ -14,7 +14,7 @@ app.use(express.json());
 
 // Star Wars reservations (DATA)
 // =============================================================
-var reservation = [
+var reservations = [
   {
     routeName: "reserv1",
     name: "Shane",
@@ -36,13 +36,13 @@ app.get("/add", function(req, res) {
 });
 
 // Displays all reservations
-app.get("/api/reservation", function(req, res) {
-  return res.json(reservation);
+app.get("/api/reservations", function(req, res) {
+  return res.json(reservations);
 });
 
 // Displays a single reservation, or returns false
-app.get("/api/reservations/:reservation", function(req, res) {
-  var chosen = req.params.reservation;
+app.get("/api/reservations/:reservations", function(req, res) {
+  var chosen = req.params.reservations;
 
   console.log(chosen);
 
